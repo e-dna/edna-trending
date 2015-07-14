@@ -7,6 +7,6 @@ class ParselyController < ApplicationController
   end
 
   def save
-    return json: {status: 'success'}
+    render json: {status: 'success'}
   end
 end
