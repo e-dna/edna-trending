@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root  'trendings#root'
 
   get   'parsely/'      => 'parsely#search'
-  get   'parsely/'      => 'parsely#save'
-  get   'trendings/'    => 'trendings#get'
-  get   'trendings'     => 'trendings#root'
+  post  'parsely/'      => 'parsely#save'
+  get   'trending/'    => 'trendings#get'
+  get   'trending'     => 'trendings#root'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
