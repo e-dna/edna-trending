@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root  'trendings#root'
-  get  'trendings/'    => 'trendings#get'
+
+  get   'parsely/'      => 'parsely#search'
+  get   'parsely/'      => 'parsely#save'
+  get   'trendings/'    => 'trendings#get'
   get   'trendings'     => 'trendings#root'
 
   # The priority is based upon order of creation: first created -> highest priority.
