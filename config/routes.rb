@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root  'trendings#root'
-  post  'trendings/'    => 'trendings#get'
+  get  'trendings/'    => 'trendings#get'
   get   'trendings'     => 'trendings#root'
 
   # The priority is based upon order of creation: first created -> highest priority.
