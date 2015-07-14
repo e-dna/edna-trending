@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root  'trendings#root'
-
   get   'parsely'      => 'parsely#search'
+  get   'parsely/:keyword'      => 'parsely#search'
   get   'trending'     => 'trendings#get'
 
   # The priority is based upon order of creation: first created -> highest priority.

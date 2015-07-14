@@ -1,8 +1,9 @@
 class ParselyController < ApplicationController
   def search
-    6monthsago = Date.today - 6.months).strftime("%Y-%d-%m")
+    keyword = params[:keyword]
+    monthsago = (Date.today - 6.months).strftime("%Y-%m-%d")
     reg = 'apikey=' + ENV['EDNA_PARSELY_KEY'] + '&secret=' + ENV['EDNA_PARSELY_SECRET']
-    params = reg + '&pub_date_start=2000-01-01&pub_date_end=' + 6monthsago + '&page=1&limit=100&sort=_hits&q=' + keyword + '&strategy=click&click.method=ref_search'
+    params = reg + '&pub_date_start=2000-01-01&pub_date_end=' + monthsago + '&page=1&limit=100&sort=_hits&q=' + keyword + '&strategy=click&click.method=ref_search'
     response = HTTParty.get('https://api.parsely.com/v2/search?' + params)
     json = { body: response.body, code: response.code, message:response.message, header: response.headers.inspect}
     render json: response
